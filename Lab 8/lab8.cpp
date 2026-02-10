@@ -46,15 +46,10 @@ int main() {
   3 4 9
   */
 
-  // If an input file exists, use it; otherwise read from stdin
-  if (FILE *f = fopen("mst_in.txt", "r")) { fclose(f); freopen("mst_in.txt", "r", stdin); }
+  freopen("mst_in.txt", "r", stdin);
 
   // Kruskal's algorithm
-  int V, E;
-  if (scanf("%d %d", &V, &E) != 2) {
-    fprintf(stderr, "Error: expected two integers V and E on input\n");
-    return 1;
-  }
+  int V, E; scanf("%d %d", &V, &E);
   vector<iii> EL(E);
   for (int i = 0; i < E; ++i) {
     int u, v, w; scanf("%d %d %d", &u, &v, &w);  // read as (u, v, w)
